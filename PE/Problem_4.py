@@ -1,8 +1,11 @@
-#Largest palindrome product
-#Problem 4
-#Find the largest palindrome made from the product of two 3-digit numbers.
+'''
+Largest palindrome product
+Find the largest palindrome made from the product of two 3-digit numbers.
+'''
 
-def palindromosProductoNumeros3Digitos():
+from tictoc import tic,toc
+
+def palindromesProduct3DigitsNumbers():
 	palindrome = []
 	for i in range(100,1000):
 		for j in range(100,1000):
@@ -10,4 +13,6 @@ def palindromosProductoNumeros3Digitos():
 				palindrome.append(i*j)
 	return palindrome
 
-print max(palindromosProductoNumeros3Digitos())
+tic()
+print(max(palindromesProduct3DigitsNumbers()))
+toc()
