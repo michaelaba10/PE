@@ -40,8 +40,10 @@ def numberSteps(n):
 number_longest_chain = 0
 size_longest_chain = 0
 
+
+## 33s answer, not bad, 152 steps taken
 tic()
-for i in range(2,1000000):
+for i in range(2,1000001):
     number_steps = numberSteps(i)
     if number_steps > size_longest_chain:
         size_longest_chain = number_steps

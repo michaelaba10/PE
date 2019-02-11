@@ -39,11 +39,19 @@ def num_divisors(n):
 
 tic()
 
-for number in range(1,100,2):
-    if num_divisors(number)>2:
-        for  power in range(1,floor(sqrt(number/2))+1):
-           even_number = number - 2*(power**2)
-           if num_divisors(even_number)==:
-               print((number,power))
 
+n = 6000
+list_numbers = list(range(1,n,2))
+list_numbers = [x for x in list_numbers if num_divisors(x)>2]
+
+
+for number in range(1,n,2):
+    if num_divisors(number)>2:  
+        for  power in range(1,floor(sqrt(number/2))+1):
+            even_number = number - 2*(power**2)
+            if num_divisors(even_number) == 2:
+                list_numbers.remove(number)
+                break
+
+print(list_numbers)
 toc()
