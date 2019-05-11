@@ -11,13 +11,16 @@ from tictoc import tic,toc
 
 def sum_even_fibonaccies_less_equal_than(limit):
     # This function sums all the even fibonaccies numbers that don't exceed a certain limit
-    
+    sum_even_fibonaccies = 0
     fibonaccies0 = [1,1]
-    while (fibonaccies0[-1]+fibonaccies0[-2]<= limit) :
-        new_fibonacci = fibonaccies0[- 2] + fibonaccies0[-1]
-        fibonaccies0.append(new_fibonacci)
-    even_fibonnaccies = [i for i in fibonaccies0 if i%2 == 0]
-    return sum(even_fibonnaccies)
+    while (fibonaccies0[0]+fibonaccies0[1]<= limit) :
+        new_fibonacci = fibonaccies0[0] + fibonaccies0[1]
+    
+        fibonaccies0[0] = fibonaccies0[1]
+        fibonaccies0[1] = new_fibonacci
+        if (new_fibonacci%2==0):
+            sum_even_fibonaccies = new_fibonacci + sum_even_fibonaccies
+    return sum_even_fibonaccies
 
 
 tic()

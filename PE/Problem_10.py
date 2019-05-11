@@ -7,7 +7,6 @@ Find the sum of all the primes below two million.
 from tictoc import tic,toc
 
 def cribaErastotenesII(n):
-
     primes = [True for i in range(n+1)]
     p=2
     while(p * p <= n):

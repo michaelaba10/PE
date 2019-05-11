@@ -1,5 +1,5 @@
 '''
-In the 20Ã—20 grid below, four numbers along a diagonal line have been marked in red.
+In the 20—20 grid below, four numbers along a diagonal line have been marked in red.
 
 --> Comment: look at line 7
 
@@ -24,10 +24,10 @@ In the 20Ã—20 grid below, four numbers along a diagonal line have been marked in
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
 
-The product of these numbers is 26 Ã— 63 Ã— 78 Ã— 14 = 1788696.
+The product of these numbers is 26 — 63 — 78 — 14 = 1788696.
 
 What is the greatest product of four adjacent numbers in
- the same direction (up, down, left, right, or diagonally) in the 20Ã—20 grid?
+ the same direction (up, down, left, right, or diagonally) in the 20—20 grid?
 '''
 import numpy as np
 from tictoc import tic,toc
@@ -56,33 +56,33 @@ grid =[[8,2,22,97,38,15,0,40,0,75,4,5,7,78,52,12,50,77,91,8,],
 
 def horizontalProducts(l):
 	x=0
-	maxProductos=0
+	maxProducts=0
 	for i in range(16):
 		x=l[i]*l[i+1]*l[i+2]*l[i+3]
-		if x>maxProductos:
-			maxProductos=x
-	return maxProductos
+		if x>maxProducts:
+			maxProducts=x
+	return maxProducts
 
 
 def diagonalProductDownUp(l):
 	x=1
-	maxProductos=0
+	maxProducts=0
 	for i in range(0,16):
 		for j in range(0,16):
 			x= l[i][j]*l[i+1][j+1]*l[i+2][j+2]*l[i+3][j+3]
-			if x>maxProductos:
-				maxProductos=x
-	return maxProductos
+			if x>maxProducts:
+				maxProducts=x
+	return maxProducts
 
 def diagonalProductUpDown(l):
 	x=1
-	maxProductos=0
+	maxProducts=0
 	for i in range(0,19)[::-1]:
 		for j in range(0,16):
 			x= l[i][j]*l[i-1][j+1]*l[i-2][j+2]*l[i-3][j+3]
-			if x>maxProductos:
-				maxProductos=x
-	return maxProductos
+			if x>maxProducts:
+				maxProducts=x
+	return maxProducts
 
 tic()
 print(diagonalProductDownUp(grid))

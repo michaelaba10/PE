@@ -54,18 +54,16 @@ s20='71636269561882670428252483600823257530420752963450'
 
 from tictoc import tic,toc
 
-
-
 w=s1+s2+s3+s4+s5+s6+s7+s8+s9+s10+s11+s12+s13+s14+s15+s16+s17+s18+s19+s20
 
-
 def maximunProduct13(s):
-	products=[0]
-	x=1
-	for i in range(0,988): # 988 = 1001-13
-		x = int(s[i])*int(s[i+1])*int(s[i+2])*int(s[i+3])*int(s[i+4])*int(s[i+5])*int(s[i+6])*int(s[i+7])*int(s[i+8])*int(s[i+9])*int(s[i+10])*int(s[i+11])*int(s[i+12])
-		products.append(x)
-	return max(products)
+    maximun_product = 0
+    x=1
+    for i in range(0,988): # 988 = 1001-13
+        x = int(s[i])*int(s[i+1])*int(s[i+2])*int(s[i+3])*int(s[i+4])*int(s[i+5])*int(s[i+6])*int(s[i+7])*int(s[i+8])*int(s[i+9])*int(s[i+10])*int(s[i+11])*int(s[i+12])
+        if(maximun_product < x):
+            maximun_product = x  
+    return maximun_product
 
 tic()
 print(maximunProduct13(w))

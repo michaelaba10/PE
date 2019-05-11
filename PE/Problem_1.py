@@ -8,7 +8,7 @@ from math import floor
 from tictoc import tic,toc
 
 def sum_multiples_until(multiple,limit):
-     # This function sum all the multiples of a number that are strictly less than certain limit.
+    # This function sum all the multiples of a number that are strictly less than certain limit.
     if limit % multiple == 0:
         superior_limit = floor(limit/multiple-1)
     else:
@@ -20,8 +20,6 @@ def sum_multiples_until(multiple,limit):
 
 
 ## We add the multiples of 3 and 5 belowm 1000, but the multiples of 15 are added up twice.
-    
-
 tic()
 value = sum_multiples_until(3,1000) + sum_multiples_until(5,1000) - sum_multiples_until(15,1000)
 toc()

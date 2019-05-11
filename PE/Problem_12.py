@@ -42,8 +42,9 @@ def num_divisors(n):
         divisors = divisors * (count + 1)
         p += 2
     return divisors
+
  
-def find_triangular_index(factor_limit):
+def find_triangular_index(factor_limit): # Taking advantage that all tringular number is of the form n(n+1)/2
     n = 1
     lnum, rnum = num_divisors(n), num_divisors(n+1)
     while lnum * rnum < 500:
